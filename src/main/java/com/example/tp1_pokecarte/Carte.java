@@ -19,6 +19,21 @@ public class Carte {
             - à l'attribut "estUneEvolution" la valeur False
             - à l'attribut typePokemon la valeur "Null"
          */
+        this.nom = nom;
+        this.carteType = carteType;
+        this.sort1 = sort1;
+        this.sort2 = sort2;
+        this.estUneEvolution = estUneEvolution;
+        this.typePokemon = typePokemon;
+        this.imageUrl = url;
+        if (carteType != "Pokemon"){
+            this.sort1 = 0;
+            this.sort2 = 0;
+            this.estUneEvolution = false;
+            this.typePokemon = "Null";
+
+        }
+
 
     }
 
@@ -50,5 +65,33 @@ public class Carte {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setCarteType(String carteType) {
+        this.carteType = carteType;
+    }
+
+    public void setSort1(int sort1) {
+        this.sort1 = sort1;
+    }
+
+    public void setSort2(int sort2) {
+        this.sort2 = sort2;
+    }
+
+    public void setEstUneEvolution(boolean estUneEvolution) {
+        this.estUneEvolution = estUneEvolution;
+    }
+
+    public void setTypePokemon(String typePokemon) {
+        this.typePokemon = typePokemon;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
