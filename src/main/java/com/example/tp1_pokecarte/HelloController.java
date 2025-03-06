@@ -3,6 +3,7 @@ package com.example.tp1_pokecarte;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -25,6 +26,7 @@ public class HelloController implements Initializable {
     @FXML
     private Label lblMove2;
 
+
     @FXML
     private Label lblIsEvolution;
     @FXML
@@ -45,6 +47,10 @@ public class HelloController implements Initializable {
     @FXML
     private Label lblLblSort1;
     public Carte c;
+    @FXML
+    private TextField txtModification;
+
+    public Carte ca;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -117,8 +123,13 @@ public class HelloController implements Initializable {
                 lblAttribution(lblPokemonType,c.getTypePokemon());
                 lblAttribution(lblName,c.getNom());
                 lblAttribution(lblCardType,c.getCarteType());
-                lblMove1.setText("Impossible");
-                lblMove2.setText("Impossible");
+                lblMove1.setText("");
+                lblMove2.setText("");
+                lblLblSort2.setText("");
+                lblLblSort1.setText("");
+            } else {
+                lblLblSort1.setText("Sort 1:");
+                lblLblSort2.setText("Sort 2 :");
             }
 
 
@@ -134,17 +145,66 @@ public class HelloController implements Initializable {
         aff(chen);
     }
 
-    public void clickModification(MouseEvent kart) {
+    @FXML
+    public void clickModification(MouseEvent mouseEvent) {
         /*
             DIFFICILE (/5)
             Cette fonction devra également s'accompagner de changement dans la vue (SceneBuilder). Vous serez libres de faire comme vous le souhaitez.
             En cliquant sur le bouton modification, vous appliquerez les modifications que vous souhaitez vis-à-vis d'une carte.
 
-         */
-        Carte kart ;
-        kart.setNom("");
-        lblName.setText(kart.getNom());
 
+         */
+
+        fightEnergy = new Carte("FIGHT ENERGY", "Energy",  0, 0, false, "Null", "1-120.png");
+
+        aquaEnergy = new Carte("AQUA ENERGY", "Energy",  0, 0, false, "Null", "1-117.png");
+
+        psyEnergy = new Carte("PSY ENERGY", "Energy",  0, 0, false, "Null", "1-119.png");
+
+        pokeBall = new Carte("Poke Ball", "Trainer",  0, 0, false, "Null", "1-95.png");
+
+        pokegear = new Carte("Pokegear 3.0", "Trainer",  0, 0, false, "Null", "1-96.png");
+
+        chen = new Carte("Prof Chen", "Trainer",  0, 0, false, "Null", "1-101.png");
+
+        sandshrew = new Carte("Sandshrew", "Pokemon",  0, 10, false, "Fight", "1-29.png");
+
+        koffing = new Carte("Koffing", "Pokemon",  10, 20, false, "Psy", "1-70.png");
+
+        magikarp = new Carte("Magikarp", "Pokemon",  10, 0, false, "Aqua", "1-72.png");
+
+        if (magikarp.equals(true)){
+            modif(magikarp);
+        }
+
+
+
+
+
+
+    }
+    public void modif(Carte ca){
+        fightEnergy = new Carte("FIGHT ENERGY", "Energy",  0, 0, false, "Null", "1-120.png");
+
+        aquaEnergy = new Carte("AQUA ENERGY", "Energy",  0, 0, false, "Null", "1-117.png");
+
+        psyEnergy = new Carte("PSY ENERGY", "Energy",  0, 0, false, "Null", "1-119.png");
+
+        pokeBall = new Carte("Poke Ball", "Trainer",  0, 0, false, "Null", "1-95.png");
+
+        pokegear = new Carte("Pokegear 3.0", "Trainer",  0, 0, false, "Null", "1-96.png");
+
+        chen = new Carte("Prof Chen", "Trainer",  0, 0, false, "Null", "1-101.png");
+
+        sandshrew = new Carte("Sandshrew", "Pokemon",  0, 10, false, "Fight", "1-29.png");
+
+        koffing = new Carte("Koffing", "Pokemon",  10, 20, false, "Psy", "1-70.png");
+
+        magikarp = new Carte("Magikarp", "Pokemon",  10, 0, false, "Aqua", "1-72.png");
+
+
+            String nomPokemon = txtModification.getText();
+            ca.setNom(nomPokemon);
 
 
 
